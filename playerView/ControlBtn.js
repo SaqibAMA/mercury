@@ -19,7 +19,7 @@ import TimeLimt from './TimeLimit';
 export default class ControlBtn extends Component {
   static defaultProps = {
     titleGolive: 'Go live',
-    showLeftButton: true,
+    showLeftButton: false,
     showMiddleButton: true,
     showRightButton: true
   }
@@ -72,7 +72,8 @@ export default class ControlBtn extends Component {
       showLeftButton,
       showMiddleButton,
       showRightButton,
-      style
+      style,
+      onPressRecord
     } = this.props;
     return (
       <View style={[styles.controls, style]}>
@@ -160,11 +161,9 @@ export default class ControlBtn extends Component {
                   showRightButton ? (
                     <TouchableOpacity
                       activeOpacity={1}
-                      onPress={() => {
-                        onFullPress && onFullPress(!isFull);
-                      }}
+                      onPress={onPressRecord}
                       style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
-                      <Icon name={isFull ? 'fullscreen-exit' : 'fullscreen'} size={30} color="#fff" />
+                      <Icon name='video-box' size={30} color="#fff" />
                     </TouchableOpacity>
                   ) : <View style={{ width: 50 }} />
                 }

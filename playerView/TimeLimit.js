@@ -19,7 +19,7 @@ export default class TimeLimt extends Component {
   };
 
   componentDidMount() {
-    if(this.props.maxTime > 0){
+    if (this.props.maxTime > 0) {
       this.timer = setInterval(this._updateTimer, 1000);
     }
   }

@@ -54,7 +54,7 @@ export default class VLCPlayerView extends Component {
     playInBackground: false,
     isGG: false,
     autoplay: true,
-    errorTitle: 'Error play video, please try again'
+    errorTitle: 'Stream could not be played. If this persists, please contact Obvio.AI support.'
   };
 
   componentDidMount() {
@@ -103,7 +103,8 @@ export default class VLCPlayerView extends Component {
       showLeftButton,
       showMiddleButton,
       showRightButton,
-      errorTitle
+      errorTitle,
+      onPressRecord
     } = this.props;
     let { isLoading, loadingSuccess, showControls, isError } = this.state;
     let showGG = false;
@@ -154,7 +155,7 @@ export default class VLCPlayerView extends Component {
           //seek={this.state.seek}
           style={[styles.video]}
           source={source}
-          videoAspectRatio={videoAspectRatio}
+          videoAspectRatio={"4:3"}
           onProgress={this.onProgress.bind(this)}
           onEnd={this.onEnded.bind(this)}
           //onEnded={this.onEnded.bind(this)}
@@ -207,7 +208,7 @@ export default class VLCPlayerView extends Component {
             <View style={{ justifyContent: 'center', flex: 1, marginRight: 10 }}>
               {showTitle &&
                 showControls && (
-                  <Text style={{ color: '#fff', fontSize: 16 }} numberOfLines={1}>
+                  <Text style={{ color: '#fff', fontSize: 16, marginLeft: 20 }} numberOfLines={1}>
                     {title}
                   </Text>
                 )}
@@ -260,6 +261,7 @@ export default class VLCPlayerView extends Component {
               showLeftButton={showLeftButton}
               showMiddleButton={showMiddleButton}
               showRightButton={showRightButton}
+              onPressRecord={onPressRecord}
             />
           )}
         </View>
@@ -502,6 +504,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
     width: '100%',
+    aspectRatio: 4 / 3
   },
   loading: {
     position: 'absolute',
