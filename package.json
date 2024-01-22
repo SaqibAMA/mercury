@@ -1,6 +1,6 @@
 {
   "name": "mercury-player",
-  "version": "2.0.4",
+  "version": "2.0.7",
   "description": "An RTSP player for React Native, tailored and customized for iOS 16+ devices.",
   "main": "index.js",
   "scripts": {
