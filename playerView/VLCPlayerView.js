@@ -289,11 +289,6 @@ export default class VLCPlayerView extends Component {
             }}
           >
             <Icon name={'video-plus'} size={45} color="#fff" />
-            <Text style={{
-              color: '#fff',
-              fontSize: 18,
-              fontWeight: 'bold',
-            }}>Get A Clip</Text>
           </TouchableOpacity>
         </View>
 
