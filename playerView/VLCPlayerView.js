@@ -254,7 +254,7 @@ export default class VLCPlayerView extends Component {
                   this.vlcPlayer.seek(value);
                 }
               }}
-              showGoLive={showGoLive}
+              showGoLive={true}
               onGoLivePress={onGoLivePress}
               onReplayPress={onReplayPress}
               titleGolive={titleGolive}
