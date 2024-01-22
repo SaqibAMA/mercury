@@ -72,8 +72,7 @@ export default class ControlBtn extends Component {
       showLeftButton,
       showMiddleButton,
       showRightButton,
-      style,
-      onPressRecord
+      style
     } = this.props;
     return (
       <View style={[styles.controls, style]}>
@@ -149,20 +148,12 @@ export default class ControlBtn extends Component {
               )} */}
 
               <View style={styles.right}>
-                <TouchableOpacity
-                  activeOpacity={1}
-                  onPress={() => {
-                    onGoLivePress && onGoLivePress();
-                  }}>
-                  <Text
-                    style={{ fontSize: 11, color: '#fff' }}>{showGoLive ? titleGolive : '       '}</Text>
-                </TouchableOpacity>
                 {
                   showRightButton ? (
                     <TouchableOpacity
                       activeOpacity={1}
                       onPress={onPressRecord}
-                      style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
+                      style={{ width: 50, alignItems: 'center', display: 'none', justifyContent: 'center' }}>
                       <Icon name='video-box' size={30} color="#fff" />
                     </TouchableOpacity>
                   ) : <View style={{ width: 50 }} />
