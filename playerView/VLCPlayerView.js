@@ -278,14 +278,10 @@ export default class VLCPlayerView extends Component {
             }}
             style={{
               padding: 5,
+              paddingHorizontal: 7,
               borderRadius: 5,
               backgroundColor: '#000',
               opacity: 0.9,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: 5,
-              flexDirection: 'row',
             }}
           >
             <Icon name={'video-plus'} size={45} color="#fff" />
