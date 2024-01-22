@@ -285,12 +285,13 @@ export default class VLCPlayerView extends Component {
               justifyContent: 'center',
               alignItems: 'center',
               gap: 5,
+              flexDirection: 'row',
             }}
           >
             <Icon name={'video-plus'} size={45} color="#fff" />
             <Text style={{
               color: '#fff',
-              fontSize: 12,
+              fontSize: 18,
               fontWeight: 'bold',
             }}>Get A Clip</Text>
           </TouchableOpacity>
