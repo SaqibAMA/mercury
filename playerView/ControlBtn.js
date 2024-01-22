@@ -21,7 +21,7 @@ export default class ControlBtn extends Component {
     titleGolive: 'Go live',
     showLeftButton: false,
     showMiddleButton: true,
-    showRightButton: true
+    showRightButton: false
   }
 
   _getTime = (data = 0) => {

@@ -265,6 +265,27 @@ export default class VLCPlayerView extends Component {
             />
           )}
         </View>
+
+        {/* custom recording button */}
+        <View style={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+        }}>
+          <TouchableOpacity
+            onPress={() => {
+              console.log('record button pressed')
+            }}
+            style={{
+              padding: 10,
+              borderRadius: 50,
+              backgroundColor: '#000',
+            }}
+          >
+            <Icon name={'video-plus'} size={45} color="#fff" />
+          </TouchableOpacity>
+        </View>
+
       </TouchableOpacity>
     );
   }
