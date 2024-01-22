@@ -277,14 +277,14 @@ export default class VLCPlayerView extends Component {
               onPressRecord && onPressRecord();
             }}
             style={{
-              padding: 5,
-              paddingHorizontal: 7,
-              borderRadius: 5,
-              backgroundColor: '#000',
+              padding: 10,
+              paddingHorizontal: 12,
+              borderRadius: 25,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
               opacity: 0.9,
             }}
           >
-            <Icon name={'video-plus'} size={45} color="#fff" />
+            <Icon name={'video-plus'} size={40} color="#fff" />
           </TouchableOpacity>
         </View>
 
