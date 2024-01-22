@@ -279,7 +279,7 @@ export default class VLCPlayerView extends Component {
             style={{
               padding: 10,
               paddingHorizontal: 12,
-              borderRadius: 25,
+              borderRadius: 50,
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
               opacity: 0.9,
             }}
