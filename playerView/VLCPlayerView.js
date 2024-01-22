@@ -277,8 +277,8 @@ export default class VLCPlayerView extends Component {
               onPressRecord && onPressRecord();
             }}
             style={{
-              padding: 10,
-              paddingHorizontal: 12,
+              padding: 7,
+              paddingHorizontal: 9,
               borderRadius: 5,
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
               opacity: 0.9,
