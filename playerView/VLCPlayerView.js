@@ -301,14 +301,20 @@ export default class VLCPlayerView extends Component {
               borderRadius: 5,
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
               opacity: 0.9,
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 5,
             }}
           >
             <Icon name={'record'} size={40} color="red" />
             <Text style={{
               color: 'white',
-              fontSize: 14,
+              fontSize: 16,
+              fontWeight: 'bold',
             }}>
-              Live Stream
+              LIVE STREAM
             </Text>
           </TouchableOpacity>
         </View>
