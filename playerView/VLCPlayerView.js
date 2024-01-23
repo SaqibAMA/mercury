@@ -284,7 +284,7 @@ export default class VLCPlayerView extends Component {
               opacity: 0.9,
             }}
           >
-            <Icon name={'video-plus'} size={40} color="#fff" />
+            <Icon name={'record'} size={40} color="red" />
           </TouchableOpacity>
         </View>
 
