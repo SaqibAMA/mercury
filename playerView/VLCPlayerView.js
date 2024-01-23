@@ -284,7 +284,32 @@ export default class VLCPlayerView extends Component {
               opacity: 0.9,
             }}
           >
+            <Icon name={'video-box'} size={40} color="white" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Live Stream Indicator */}
+        <View style={{
+          position: 'absolute',
+          top: 20,
+          right: 20,
+        }}>
+          <TouchableOpacity
+            style={{
+              padding: 5,
+              paddingHorizontal: 7,
+              borderRadius: 5,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              opacity: 0.9,
+            }}
+          >
             <Icon name={'record'} size={40} color="red" />
+            <Text style={{
+              color: 'white',
+              fontSize: 14,
+            }}>
+              Live Stream
+            </Text>
           </TouchableOpacity>
         </View>
 
