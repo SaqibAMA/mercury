@@ -75,56 +75,21 @@ export default class ControlBtn extends Component {
       style
     } = this.props;
     return (
-      <View style={[styles.controls, style]}>
-        <View style={styles.controlContainer}>
-          <TouchableOpacity style={styles.controlContent} activeOpacity={1}>
-            <View style={styles.controlContent2}>
-              <View style={styles.right}>
-                {
-                  showLeftButton ? (
-                    <TouchableOpacity
-                      activeOpacity={1}
-                      onPress={() => {
-                        onReplayPress && onReplayPress();
-                      }}
-                      style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
-                      <Icon name={'replay'} size={30} color="#fff" />
-                    </TouchableOpacity>
-                  ) : <View style={{ width: 50 }} />
-                }
-                <Text
-                  style={{ fontSize: 11, color: '#fff' }}>       </Text>
-              </View>
-
-              {
-                showMiddleButton && (
-                  <TouchableOpacity
-                    activeOpacity={1}
-                    onPress={() => {
-                      onPausedPress && onPausedPress(!paused);
-                    }}
-                    style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon name={paused ? 'play' : 'pause'} size={45} color="#fff" />
-                  </TouchableOpacity>
-                )
-              }
-
-              <View style={styles.right}>
-                {
-                  showRightButton ? (
-                    <TouchableOpacity
-                      activeOpacity={1}
-                      onPress={onPressRecord}
-                      style={{ width: 50, alignItems: 'center', display: 'none', justifyContent: 'center' }}>
-                      <Icon name='video-box' size={30} color="#fff" />
-                    </TouchableOpacity>
-                  ) : <View style={{ width: 50 }} />
-                }
-              </View>
-
-            </View>
-          </TouchableOpacity>
-        </View>
+      <View style={{
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            onPausedPress && onPausedPress(!paused);
+          }}
+          style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
+          <Icon name={paused ? 'play' : 'pause'} size={45} color="#fff" />
+        </TouchableOpacity>
       </View>
     );
   }
