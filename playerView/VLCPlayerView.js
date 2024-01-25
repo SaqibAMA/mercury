@@ -104,7 +104,9 @@ export default class VLCPlayerView extends Component {
       showMiddleButton,
       showRightButton,
       errorTitle,
-      onPressRecord
+      onPressRecord,
+      onPlaying,
+      onBuffering
     } = this.props;
     let { isLoading, loadingSuccess, showControls, isError } = this.state;
     let showGG = false;
@@ -160,8 +162,8 @@ export default class VLCPlayerView extends Component {
           onEnd={this.onEnded.bind(this)}
           //onEnded={this.onEnded.bind(this)}
           onStopped={this.onEnded.bind(this)}
-          onPlaying={this.onPlaying.bind(this)}
-          onBuffering={this.onBuffering.bind(this)}
+          onPlaying={onPlaying}
+          onBuffering={onBuffering}
           onPaused={this.onPaused.bind(this)}
           onError={this._onError}
           onOpen={this._onOpen}
