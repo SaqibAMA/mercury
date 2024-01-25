@@ -267,7 +267,7 @@ export default class VLCPlayerView extends Component {
         </View>
 
         {/* custom recording button */}
-        <View style={{
+        {/* <View style={{
           position: 'absolute',
           top: 20,
           left: 20,
@@ -286,10 +286,10 @@ export default class VLCPlayerView extends Component {
           >
             <Icon name={'video'} size={40} color="white" />
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         {/* Live Stream Indicator */}
-        <View style={{
+        {/* <View style={{
           position: 'absolute',
           top: 20,
           right: 20,
@@ -318,7 +318,7 @@ export default class VLCPlayerView extends Component {
               LIVE STREAM
             </Text>
           </View>
-        </View>
+        </View> */}
 
       </TouchableOpacity>
     );
