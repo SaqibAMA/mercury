@@ -75,21 +75,94 @@ export default class ControlBtn extends Component {
       style
     } = this.props;
     return (
-      <View style={{
-        flex: 1,
-        width: '100%',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => {
-            onPausedPress && onPausedPress(!paused);
-          }}
-          style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
-          <Icon name={paused ? 'play' : 'pause'} size={45} color="#fff" />
-        </TouchableOpacity>
+      <View style={[styles.controls, style]}>
+        <View style={styles.controlContainer}>
+          <TouchableOpacity style={styles.controlContent} activeOpacity={1}>
+            <View style={styles.controlContent2}>
+              <View style={styles.right}>
+                {
+                  showLeftButton ? (
+                    <TouchableOpacity
+                      activeOpacity={1}
+                      onPress={() => {
+                        onReplayPress && onReplayPress();
+                      }}
+                      style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
+                      <Icon name={'replay'} size={30} color="#fff" />
+                    </TouchableOpacity>
+                  ) : <View style={{ width: 50 }} />
+                }
+                <Text
+                  style={{ fontSize: 11, color: '#fff' }}>       </Text>
+              </View>
+
+              {
+                showMiddleButton && (
+                  <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={() => {
+                      onPausedPress && onPausedPress(!paused);
+                    }}
+                    style={{ width: 50, alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon name={paused ? 'play' : 'pause'} size={30} color="#fff" />
+                  </TouchableOpacity>
+                )
+              }
+
+              {/* {showSlider && totalTime > 0 &&(
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    //justifyContent: 'space-between',
+                  }}>
+                  <View style={{justifyContent:'center',alignItems:'center',height:50, minWidth: 50,}}>
+                    <Text style={{fontSize: 11,color: '#fff',}}>
+                      {this._getTime(currentTime) || 0}
+                    </Text>
+                  </View>
+                  <View style={styles.progress}>
+                    <Slider
+                      minimumTrackTintColor="#30a935"
+                      thumbStyle={styles.thumb}
+                      style={{ width: '100%' }}
+                      value={currentTime}
+                      maximumValue={totalTime}
+                      step={1}
+                      onValueChange={value => {
+                        onValueChange && onValueChange(value);
+                      }}
+                      onSlidingComplete={value => {
+                        onSlidingComplete && onSlidingComplete(value);
+                      }}
+                    />
+                  </View>
+                  <View style={{justifyContent:'center',alignItems:'center',height:50, minWidth: 50}}>
+                  <Text
+                    style={{fontSize: 11,color: '#fff'}}>
+                    {this._getTime(totalTime) || 0}
+                  </Text>
+                  </View>
+                </View>
+              )} */}
+
+              <View style={styles.right}>
+                {
+                  showRightButton ? (
+                    <TouchableOpacity
+                      activeOpacity={1}
+                      onPress={onPressRecord}
+                      style={{ width: 50, alignItems: 'center', display: 'none', justifyContent: 'center' }}>
+                      <Icon name='video-box' size={30} color="#fff" />
+                    </TouchableOpacity>
+                  ) : <View style={{ width: 50 }} />
+                }
+              </View>
+
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -139,6 +212,7 @@ const styles = StyleSheet.create({
   controlContent2: {
     flex: 1,
     flexDirection: 'row',
+    backgroundColor: 'rgba(0,0,0,0.5)',
     alignItems: 'center',
     justifyContent: 'space-between',
   },

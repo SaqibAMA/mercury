@@ -223,7 +223,7 @@ export default class VLCPlayerView extends Component {
             )}
           </View>
         </View>
-        <View style={{
+        {/* <View style={{
           flex: 1,
           width: '100%',
           height: '100%',
@@ -268,7 +268,7 @@ export default class VLCPlayerView extends Component {
               onPressRecord={onPressRecord}
             />
           )}
-        </View>
+        </View> */}
 
         {/* custom recording button */}
         {/* <View style={{
