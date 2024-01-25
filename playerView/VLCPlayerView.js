@@ -227,7 +227,7 @@ export default class VLCPlayerView extends Component {
             )}
           </View>
         </View>
-        <View style={[styles.bottomView]}>
+        {/* <View style={[styles.bottomView]}>
           {showControls && (
             <ControlBtn
               //style={isFull?{width:deviceHeight}:{}}
@@ -266,7 +266,7 @@ export default class VLCPlayerView extends Component {
               onPressRecord={onPressRecord}
             />
           )}
-        </View>
+        </View> */}
 
         {/* custom recording button */}
         {/* <View style={{
