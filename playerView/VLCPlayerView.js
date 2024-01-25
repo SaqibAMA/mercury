@@ -104,9 +104,7 @@ export default class VLCPlayerView extends Component {
       showMiddleButton,
       showRightButton,
       errorTitle,
-      onPressRecord,
-      onPlaying,
-      onBuffering
+      onPressRecord
     } = this.props;
     let { isLoading, loadingSuccess, showControls, isError } = this.state;
     let showGG = false;
@@ -154,16 +152,14 @@ export default class VLCPlayerView extends Component {
         <VLCPlayer
           ref={ref => (this.vlcPlayer = ref)}
           paused={this.state.paused}
-          //seek={this.state.seek}
           style={[styles.video]}
           source={source}
           videoAspectRatio={"4:3"}
           onProgress={this.onProgress.bind(this)}
           onEnd={this.onEnded.bind(this)}
-          //onEnded={this.onEnded.bind(this)}
           onStopped={this.onEnded.bind(this)}
-          onPlaying={onPlaying}
-          onBuffering={onBuffering}
+          onPlaying={this.onPlaying.bind(this)}
+          onBuffering={this.onBuffering.bind(this)}
           onPaused={this.onPaused.bind(this)}
           onError={this._onError}
           onOpen={this._onOpen}
@@ -227,7 +223,13 @@ export default class VLCPlayerView extends Component {
             )}
           </View>
         </View>
-        {/* <View style={[styles.bottomView]}>
+        <View style={{
+          flex: 1,
+          width: '100%',
+          height: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
           {showControls && (
             <ControlBtn
               //style={isFull?{width:deviceHeight}:{}}
@@ -266,7 +268,7 @@ export default class VLCPlayerView extends Component {
               onPressRecord={onPressRecord}
             />
           )}
-        </View> */}
+        </View>
 
         {/* custom recording button */}
         {/* <View style={{
